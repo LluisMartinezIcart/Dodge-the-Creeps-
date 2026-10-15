@@ -24,5 +24,4 @@ one_shot = true
 position = Vector2( 240, 450 )
 
 [node name="MobPath" type="Path2D" parent="."]
-position = Vector2( 240, 450 )
 curve = SubResource( 1 )

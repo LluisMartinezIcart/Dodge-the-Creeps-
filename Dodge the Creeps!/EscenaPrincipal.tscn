@@ -14,29 +14,34 @@ _data = {
 script = ExtResource( 2 )
 mob_scene = ExtResource( 3 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.392157, 0.129412, 0.129412, 1 )
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="Player" parent="ColorRect" instance=ExtResource( 1 )]
+
+[node name="MobTimer" type="Timer" parent="ColorRect"]
 wait_time = 0.5
 
-[node name="ScoreTimer" type="Timer" parent="."]
+[node name="ScoreTimer" type="Timer" parent="ColorRect"]
 
-[node name="StartTimer" type="Timer" parent="."]
+[node name="StartTimer" type="Timer" parent="ColorRect"]
 wait_time = 2.0
 one_shot = true
 
-[node name="StartPosition" type="Position2D" parent="."]
+[node name="StartPosition" type="Position2D" parent="ColorRect"]
 position = Vector2( 240, 450 )
 
-[node name="MobPath" type="Path2D" parent="."]
+[node name="MobPath" type="Path2D" parent="ColorRect"]
 curve = SubResource( 1 )
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+[node name="MobSpawnLocation" type="PathFollow2D" parent="ColorRect/MobPath"]
 
-[node name="HUB" parent="." instance=ExtResource( 4 )]
+[node name="HUB" parent="ColorRect" instance=ExtResource( 4 )]
 
-[connection signal="hit" from="Player" to="." method="game_over"]
-[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
-[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
-[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
-[connection signal="start_game" from="HUB" to="." method="new_game"]
+[connection signal="hit" from="ColorRect/Player" to="." method="game_over"]
+[connection signal="timeout" from="ColorRect/MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="timeout" from="ColorRect/ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="ColorRect/StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="start_game" from="ColorRect/HUB" to="." method="new_game"]

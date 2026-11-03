@@ -28,6 +28,7 @@ stream = ExtResource( 6 )
 stream = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 128 )
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nave02.png-e361a299d1fe628ec0d0b382db9d4320.stex"
+path="res://.import/playerRed_walk1-removebg-preview.png-756cf42b4649b4f41eb87ec5b50bf87f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/nave02.png"
-dest_files=[ "res://.import/nave02.png-e361a299d1fe628ec0d0b382db9d4320.stex" ]
+source_file="res://art/playerRed_walk1-removebg-preview.png"
+dest_files=[ "res://.import/playerRed_walk1-removebg-preview.png-756cf42b4649b4f41eb87ec5b50bf87f.stex" ]
 
 [params]
 

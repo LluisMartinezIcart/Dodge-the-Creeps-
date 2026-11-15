@@ -10,7 +10,7 @@ func _on_OnlineMultiplayerButton_pressed():
 	show_pending("Online multiplayer")
 
 func _on_SettingsButton_pressed():
-	show_pending("Settings")
+	get_tree().change_scene("res://Settings.tscn")
 
 func _on_HighscoresButton_pressed():
 	show_pending("Highscores")
@@ -19,4 +19,4 @@ func _on_AboutButton_pressed():
 	show_pending("About")
 
 func show_pending(option):
-	$Options/Message.text = option + ": próximamente"
+	$ColorRect/Options/Message.text = option + ": próximamente"

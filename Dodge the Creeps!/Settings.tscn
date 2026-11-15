@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Settings.gd" type="Script" id=1]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 720.0
+color = Color( 0.392157, 0.129412, 0.129412, 1 )
+
+[node name="Options" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = -82.0
+margin_right = 97.0
+margin_bottom = 82.0
+rect_pivot_offset = Vector2( -956, -268 )
+
+[node name="TitleLabel" type="Label" parent="ColorRect/Options"]
+margin_right = 194.0
+margin_bottom = 14.0
+text = "Settings"
+
+[node name="VolumeLabel" type="Label" parent="ColorRect/Options"]
+margin_top = 18.0
+margin_right = 194.0
+margin_bottom = 32.0
+text = "Volumen general"
+
+[node name="VolumeSlider" type="HSlider" parent="ColorRect/Options"]
+margin_top = 36.0
+margin_right = 194.0
+margin_bottom = 52.0
+
+[node name="MuteCheckButton" type="CheckButton" parent="ColorRect/Options"]
+margin_top = 56.0
+margin_right = 194.0
+margin_bottom = 96.0
+text = "Mute"
+
+[node name="FullscreenCheckButton" type="CheckButton" parent="ColorRect/Options"]
+margin_top = 100.0
+margin_right = 194.0
+margin_bottom = 140.0
+text = "Pantalla completa"
+
+[node name="BackButton" type="Button" parent="ColorRect/Options"]
+margin_top = 144.0
+margin_right = 194.0
+margin_bottom = 164.0
+text = "Volver al menú"
+
+[connection signal="value_changed" from="ColorRect/Options/VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="toggled" from="ColorRect/Options/MuteCheckButton" to="." method="_on_MuteCheckButton_toggled"]
+[connection signal="toggled" from="ColorRect/Options/FullscreenCheckButton" to="." method="_on_FullscreenCheckButton_toggled"]
+[connection signal="pressed" from="ColorRect/Options/BackButton" to="." method="_on_BackButton_pressed"]
